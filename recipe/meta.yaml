@@ -1,40 +1,41 @@
-{% set version = "2.4.1" %}
+{% set version = "2.5.0" %}
 
 package:
-    name: livereload
-    version: {{ version }}
+  name: livereload
+  version: {{ version }}
 
 source:
-    fn: livereload-{{ version }}.tar.gz
-    url: https://pypi.python.org/packages/source/l/livereload/livereload-{{ version }}.tar.gz
-    md5: e79d3de78f11b459392f347f7bb20309
+  fn: livereload-{{ version }}.tar.gz
+  url: https://github.com/lepture/python-livereload/archive/v{{ version }}.tar.gz
+  sha256:
 
 build:
-    number: 0
-    script: python setup.py install --single-version-externally-managed --record record.txt
-    entry_points:
-        - livereload = livereload.cli:main
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
+  entry_points:
+    - livereload = livereload.cli:main
 
 requirements:
-    build:
-        - python
-        - setuptools
-    run:
-        - python
-        - tornado
-        - six
+  build:
+    - python
+    - setuptools
+  run:
+    - python
+    - setuptools
+    - tornado
+    - six
 
 test:
-    imports:
-        - livereload
-    commands:
-        - livereload --help
+  imports:
+    - livereload
+  commands:
+    - livereload --help
 
 about:
-    home: https://github.com/lepture/python-livereload
-    license: BSD-3-Clause
-    summary: Python LiveReload is an awesome tool for web developers
+  home: https://github.com/lepture/python-livereload
+  license: BSD 3-Clause
+  summary: 'Python LiveReload is an awesome tool for web developers.'
 
 extra:
-    recipe-maintainers:
-        - ocefpaf
+  recipe-maintainers:
+    - ocefpaf
