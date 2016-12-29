@@ -34,6 +34,7 @@ test:
 about:
   home: https://github.com/lepture/python-livereload
   license: BSD 3-Clause
+  license_file: LICENSE
   summary: 'Python LiveReload is an awesome tool for web developers.'
 
 extra:
