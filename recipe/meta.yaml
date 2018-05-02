@@ -5,7 +5,6 @@ package:
   version: {{ version }}
 
 source:
-  fn: livereload-{{ version }}.tar.gz
   url: https://github.com/lepture/python-livereload/archive/v{{ version }}.tar.gz
   sha256: f4a7bb0ad818b9d9c61fbc96692fe2a23a401b36a062b77bd8e23d0c4274e3a6
 
