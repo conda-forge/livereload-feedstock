@@ -1,4 +1,4 @@
-{% set version = "2.5.2" %}
+{% set version = "2.6.0" %}
 
 package:
   name: livereload
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/lepture/python-livereload/archive/v{{ version }}.tar.gz
-  sha256: f4a7bb0ad818b9d9c61fbc96692fe2a23a401b36a062b77bd8e23d0c4274e3a6
+  sha256: 98e914a211016967e3d53517b78d683e0e513e2fe0974e4a9a7066328cddc045
 
 build:
   noarch: python
