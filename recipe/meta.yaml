@@ -11,7 +11,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - livereload = livereload.cli:main
 
@@ -33,9 +33,9 @@ test:
 
 about:
   home: https://github.com/lepture/python-livereload
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE
-  summary: 'Python LiveReload is an awesome tool for web developers.'
+  summary: 'Python LiveReload is an awesome tool for web developers'
 
 extra:
   recipe-maintainers:
