@@ -1,17 +1,17 @@
-{% set version = "2.6.1" %}
+{% set version = "2.6.2" %}
 
 package:
   name: livereload
   version: {{ version }}
 
 source:
-  url: https://github.com/lepture/python-livereload/archive/v{{ version }}.tar.gz
-  sha256: f432db9266f80a2a30144cdf1ea4d3c6f39ebf58a636fd64c4e8dc18c601ffaf
+  url: https://github.com/lepture/python-livereload/archive/{{ version }}.tar.gz
+  sha256: 52cf71161c17fb0afa9dad321f64975388bff1797baee61162887eb07aec427e
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - livereload = livereload.cli:main
 
@@ -35,7 +35,7 @@ about:
   home: https://github.com/lepture/python-livereload
   license: BSD-3-Clause
   license_file: LICENSE
-  summary: 'Python LiveReload is an awesome tool for web developers'
+  summary: Python LiveReload is an awesome tool for web developers
 
 extra:
   recipe-maintainers:
