@@ -9,9 +9,9 @@ source:
   sha256: 52cf71161c17fb0afa9dad321f64975388bff1797baee61162887eb07aec427e
 
 build:
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - livereload = livereload.cli:main
 
@@ -29,7 +29,10 @@ test:
   imports:
     - livereload
   commands:
+    - pip check
     - livereload --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/lepture/python-livereload
