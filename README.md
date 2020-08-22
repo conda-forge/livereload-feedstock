@@ -5,7 +5,7 @@ Home: https://github.com/lepture/python-livereload
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Python LiveReload is an awesome tool for web developers
 
