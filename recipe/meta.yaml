@@ -1,29 +1,28 @@
+{% set name = "livereload" %}
 {% set version = "2.7.0" %}
 
 package:
-  name: livereload
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/lepture/python-livereload/archive/{{ version }}.tar.gz
-  sha256: ecb6fb93d89ff9d8924630e565c707c7af7b6c23b72a0e189168bcab4abed4fe
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/livereload-{{ version }}.tar.gz
+  sha256: f4ba199ef93248902841e298670eebfe1aa9e148e19b343bc57dbf1b74de0513
 
 build:
-  number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - livereload = livereload.cli:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
   run:
-    - python
-    - setuptools
+    - python >=3.7
     - tornado
-    - six
 
 test:
   imports:
