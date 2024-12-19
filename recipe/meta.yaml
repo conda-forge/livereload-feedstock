@@ -18,10 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
+    - setuptools
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - tornado
 
 test:
@@ -31,6 +32,7 @@ test:
     - pip check
     - livereload --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
