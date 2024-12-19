@@ -1,13 +1,13 @@
 {% set name = "livereload" %}
-{% set version = "2.7.0" %}
+{% set version = "2.7.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/livereload-{{ version }}.tar.gz
-  sha256: f4ba199ef93248902841e298670eebfe1aa9e148e19b343bc57dbf1b74de0513
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/livereload-{{ version }}.tar.gz
+  sha256: 3d9bf7c05673df06e32bea23b494b8d36ca6d10f7d5c3c8a6989608c09c986a9
 
 build:
   entry_points:
@@ -18,10 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
+    - setuptools
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - tornado
 
 test:
@@ -31,6 +32,7 @@ test:
     - pip check
     - livereload --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
